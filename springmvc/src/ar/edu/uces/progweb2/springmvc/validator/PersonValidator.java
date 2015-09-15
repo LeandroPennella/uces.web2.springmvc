@@ -7,6 +7,7 @@ import org.springframework.validation.Validator;
 
 import ar.edu.uces.progweb2.springmvc.model.Person;
 
+//lo va a manejar spring
 @Component
 public class PersonValidator implements Validator {
 
@@ -18,7 +19,9 @@ public class PersonValidator implements Validator {
 	@Override
 	public void validate(Object object, Errors errors) {
 		Person person = (Person) object;
+		//manera 1
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "erros.person.name.empty");
+		//manera 2
 		if (person.getName().equals("asdf")) {
 			errors.rejectValue("name", "erros.person.name.asdf");
 		}
