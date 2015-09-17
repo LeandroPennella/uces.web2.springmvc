@@ -1,4 +1,4 @@
-package ar.edu.uces.progweb2.springmvc.controller.simple;
+package ar.edu.uces.progweb2.springmvc.controller.clases;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

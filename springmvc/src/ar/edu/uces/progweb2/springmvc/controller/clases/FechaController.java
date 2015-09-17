@@ -1,4 +1,4 @@
-package ar.edu.uces.progweb2.springmvc.controller.simple;
+package ar.edu.uces.progweb2.springmvc.controller.clases;
 
 import java.util.Date;
 

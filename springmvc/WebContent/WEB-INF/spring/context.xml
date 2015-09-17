@@ -15,7 +15,7 @@
 	</bean>
 
 	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.controller.simple" />
-	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.controller.simple" />
+	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.controller.clases" />
 	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.service" />
 	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.validator" />
 
