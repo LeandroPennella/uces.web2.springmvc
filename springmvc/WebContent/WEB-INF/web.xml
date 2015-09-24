@@ -2,7 +2,7 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
 	<display-name>spring-blank</display-name>
-	
+	<!-- 
 	<filter>
 		<filter-name>injectedFilter</filter-name>
 		<filter-class>ar.edu.uces.progweb2.springmvc.controller.filter.InjectedDependencyFilter</filter-class>
@@ -11,7 +11,7 @@
 		<filter-name>injectedFilter</filter-name>
 		<url-pattern>*.htm</url-pattern>
 	</filter-mapping>
-	
+	 -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -31,6 +31,7 @@
 	</servlet-mapping>
 
 	<!-- To inject dependencies in Filter -->
+	<!--  
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -38,6 +39,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>/WEB-INF/spring/context.xml</param-value>
 	</context-param>
+	-->
 	<welcome-file-list>
 		<welcome-file>views/index.jsp</welcome-file>
 	</welcome-file-list>
