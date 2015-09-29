@@ -14,7 +14,7 @@
 <fmt:setLocale value="en" scope="session"/>
 <fmt:setBundle basename="resources.mensajes" var="x"/>
 <fmt:message bundle="${x}" key="bienvenida.inicial"></fmt:message>
-<fmt:setLocale value="es_AR_co" scope="session"/>
+<fmt:setLocale value="es_AR" scope="session"/>
 <fmt:setBundle basename="resources.mensajes" var="y"/>
 <fmt:message bundle="${y}" key="bienvenida.inicial"></fmt:message>
 

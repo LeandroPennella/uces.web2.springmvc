@@ -37,7 +37,7 @@
 	
 	<!-- message resources -->
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="resources/messages" />
+		<property name="basename" value="resources/mensajes" />
 	</bean>
 
 	<!-- for file upload -->
