@@ -1,6 +1,7 @@
 package ar.edu.uces.progweb2.springmvc.controller.clases;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import oracle.net.aso.a;
@@ -22,8 +23,9 @@ public class CookieController {
 	}
 	
 	@RequestMapping(value="/reSetearCookie")
-	public ModelAndView reSetearCookie(@CookieValue (value="colorPantalla", required=false)String valorCookie, HttpServletResponse r)
+	public ModelAndView reSetearCookie(@CookieValue (value="colorPantalla", required=false)String valorCookie, HttpServletResponse r,  HttpServletRequest rs)
 	{
+		//rs.getCookies();
 		if(valorCookie==null)
 		{valorCookie="#00FF00";}
 		return new ModelAndView("/views/cookies/mostrarColorConCookies.jsp", "color", valorCookie);

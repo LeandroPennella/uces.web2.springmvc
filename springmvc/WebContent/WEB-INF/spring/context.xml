@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:mvc="http://www.springframework.org/schema/mvc"
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="
         http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
@@ -14,13 +17,24 @@
 		<property name="location" value="classpath:resources/conf/application.properties" />
 	</bean>
 
+	<!--  -->
+	<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"></bean>
+
 	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.controller.simple" />
 	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.controller.clases" />
 	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.service" />
 	<context:component-scan base-package="ar.edu.uces.progweb2.springmvc.validator" />
 
 	<mvc:annotation-driven />
-
+	
+	<!-- message resources -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/><!-- declaro la url que va a interceptar // este toma todo // ** toma recursivamente -->
+			<bean class="ar.edu.uces.progweb2.springmvc.controller.interceptor.miInterceptor"></bean><!-- la clase que implementa el interceptor -->
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
 	<!-- message resources -->
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="resources/messages" />
