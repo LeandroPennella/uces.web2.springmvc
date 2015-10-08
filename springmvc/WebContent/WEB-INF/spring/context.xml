@@ -46,6 +46,6 @@
 	</bean>
 
 	<import resource="/json-mapper-context.xml" />
-	<!-- <import resource="/hibernate-context.xml" /> -->
+	<import resource="/hibernate-context.xml" /> 
 
 </beans>
