@@ -12,6 +12,10 @@
 
 		<!-- <property column="Cliente_id" name="cliente_id" /> -->
 		<many-to-one name="cliente" column="cliente_id" not-null="true"></many-to-one>
-				
+		
+		<set name="Items" lazy="true">
+			<key column="pedido_id" not-null="true"/>
+			<one-to-many class="ar.edu.uces.progweb2.springmvc.model.Item"/>
+		</set>
 	</class>
 </hibernate-mapping>
