@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Pedido {
 private long id;
-private long cliente_id;
+//private long cliente_id;
 private Date fecha;
 private Cliente cliente;
 public Cliente getCliente() {
@@ -39,7 +39,7 @@ public long getId() {
 public int hashCode() {
 	final int prime = 31;
 	int result = 1;
-	result = prime * result + (int) (cliente_id ^ (cliente_id >>> 32));
+	//result = prime * result + (int) (cliente_id ^ (cliente_id >>> 32));
 	result = prime * result + ((fecha == null) ? 0 : fecha.hashCode());
 	return result;
 }
@@ -52,8 +52,8 @@ public boolean equals(Object obj) {
 	if (getClass() != obj.getClass())
 		return false;
 	Pedido other = (Pedido) obj;
-	if (cliente_id != other.cliente_id)
-		return false;
+	//if (cliente_id != other.cliente_id)
+	//	return false;
 	if (fecha == null) {
 		if (other.fecha != null)
 			return false;

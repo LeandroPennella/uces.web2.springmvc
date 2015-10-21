@@ -30,6 +30,7 @@
 				<value>/ar/edu/uces/progweb2/springmvc/model/Something.hbm.xml</value>
 				<value>/ar/edu/uces/progweb2/springmvc/model/Avatar.hbm.xml</value>
 				<value>/ar/edu/uces/progweb2/springmvc/model/Pedido.hbm.xml</value>
+				<value>/ar/edu/uces/progweb2/springmvc/model/Cliente.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">

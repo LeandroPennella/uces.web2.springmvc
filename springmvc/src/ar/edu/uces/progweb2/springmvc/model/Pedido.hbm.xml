@@ -4,7 +4,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="ar.edu.uces.progweb2.springmvc.model.Pedido" table="Pedidos">
-		<id column="ID" name="id">
+		<id column="idPedido" name="id">
 			<generator class="native" />
 		</id>
 		
