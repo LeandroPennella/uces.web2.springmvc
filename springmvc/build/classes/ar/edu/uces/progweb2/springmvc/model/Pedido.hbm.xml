@@ -11,9 +11,9 @@
 		<property column="Fecha" name="fecha" />
 
 		<!-- <property column="Cliente_id" name="cliente_id" /> -->
-		<many-to-one name="cliente" column="cliente_id" not-null="true"></many-to-one>
+		<many-to-one name="cliente" column="cliente_id" not-null="true" cascade="none"></many-to-one>
 		
-		<set name="Items" lazy="true">
+		<set name="Items" lazy="true" cascade="all">
 			<key column="pedido_id" not-null="true"/>
 			<one-to-many class="ar.edu.uces.progweb2.springmvc.model.Item"/>
 		</set>
