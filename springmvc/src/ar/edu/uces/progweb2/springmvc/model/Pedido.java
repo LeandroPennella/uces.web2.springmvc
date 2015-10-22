@@ -1,12 +1,15 @@
 package ar.edu.uces.progweb2.springmvc.model;
 
 import java.util.Date;
+import java.util.Set;
 
 public class Pedido {
 private long id;
 //private long cliente_id;
 private Date fecha;
 private Cliente cliente;
+private Set<Item> items;
+
 public Cliente getCliente() {
 	return cliente;
 }
@@ -35,6 +38,17 @@ public void setId(long id) {
 public long getId() {
 	return id;
 }
+
+
+
+
+public Set<Item> getItems() {
+	return items;
+}
+public void setItems(Set<Item> items) {
+	this.items = items;
+}
+
 @Override
 public int hashCode() {
 	final int prime = 31;
