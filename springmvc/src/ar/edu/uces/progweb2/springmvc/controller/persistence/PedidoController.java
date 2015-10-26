@@ -1,4 +1,4 @@
-package ar.edu.uces.progweb2.springmvc.controller.hibernate;
+package ar.edu.uces.progweb2.springmvc.controller.persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,8 +23,6 @@ public class PedidoController {
 	{
 		pedidoDao=new PedidoDao();
 		Pedido pedido=pedidoDao.get(id);
-
-		
 		return new ModelAndView("/views/hibernate/mostrarPedido.jsp","pedido",pedido);
 	}
 	

@@ -1,20 +1,16 @@
--- phpMyAdmin SQL Dump
--- version 4.4.14
--- http://www.phpmyadmin.net
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 22-10-2015 a las 16:06:52
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- password is 'somePassword' hashed con http://www.nitrxgen.net/hashgen/ - Ojo que tal vez haya que agregar un '*' adelante
+CREATE USER 'noroot'@'localhost' IDENTIFIED BY PASSWORD '*B04E11FAAAE9A5A019BAF695B40F3BF1997EB194'; 
+
+CREATE SCHEMA IF NOT EXISTS `appschema`;
+
+USE `appschema`;
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+
 
 --
 -- Base de datos: `appschema`
@@ -115,7 +111,7 @@ INSERT INTO `something` (`id`, `value`) VALUES
 (7, 'asdf');
 
 --
--- Índices para tablas volcadas
+-- �?ndices para tablas volcadas
 --
 
 --
@@ -195,6 +191,7 @@ ALTER TABLE `items`
 ALTER TABLE `pedidos`
   ADD CONSTRAINT `fk_pedidos_clientes` FOREIGN KEY (`Cliente_id`) REFERENCES `clientes` (`idCliente`);
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+GRANT ALL PRIVILEGES ON `appschema`.* TO 'noroot'@'localhost'
+  IDENTIFIED BY PASSWORD '*B04E11FAAAE9A5A019BAF695B40F3BF1997EB194';
