@@ -21,7 +21,6 @@ public class PedidoController {
 	@RequestMapping("/mostrarPedido")
 	public ModelAndView getPedido(@RequestParam("id") long id)
 	{
-		pedidoDao=new PedidoDao();
 		Pedido pedido=pedidoDao.get(id);
 		return new ModelAndView("/views/hibernate/mostrarPedido.jsp","pedido",pedido);
 	}

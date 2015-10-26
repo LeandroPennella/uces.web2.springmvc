@@ -12,7 +12,7 @@
 <body>
 
 <TABLE>
-<tr><td>${pedido.id}</td><td>${pedido.cliente_id}</td><td>${pedido.fecha}</td></tr>
+<tr><td>${pedido.id}</td><td>${pedido.cliente.nombre}</td><td>${pedido.fecha}</td></tr>
 </TABLE>
 
 </body>

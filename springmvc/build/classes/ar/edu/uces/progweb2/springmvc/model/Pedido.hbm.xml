@@ -11,7 +11,7 @@
 		<property column="Fecha" name="fecha" />
 
 		<!-- <property column="Cliente_id" name="cliente_id" /> -->
-		<many-to-one name="cliente" column="cliente_id" not-null="true" cascade="none"></many-to-one>
+		<many-to-one name="cliente" column="cliente_id" not-null="true" cascade="none" lazy="false"></many-to-one>
 		
 		<set name="Items" lazy="true" cascade="all">
 			<key column="pedido_id" not-null="true"/>

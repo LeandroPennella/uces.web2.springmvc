@@ -3,6 +3,8 @@ package ar.edu.uces.progweb2.springmvc.model;
 public class Cliente {
 private int id;
 private String nombre;
+
+public Cliente(){}
 public int getId() {
 	return id;
 }
