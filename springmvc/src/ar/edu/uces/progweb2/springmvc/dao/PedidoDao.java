@@ -1,5 +1,7 @@
 package ar.edu.uces.progweb2.springmvc.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +34,16 @@ public class PedidoDao {
 		
 		//guarda el id en la instancia
 		session.saveOrUpdate(pedido);
+		
+	}
+	
+	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
+	public List<Pedido> getByCliente(long idCliente) {
+		Session session = sessionFactory.getCurrentSession();
+		List pedidos=session.createQuery("from " +Pedido.class.getName()+" as p where p.cliente.nombre like %?%")
+				.setString(0,"P")
+				.list();
+		return pedidos;
 		
 	}
 
