@@ -8,11 +8,9 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.uces.progweb2.springmvc.model.Pedido;
-
 //todos los metodos son transaccionales
 //cuando arranca el metodo, abre transaccion > si sale por una runtimeexception rollbackea, sino sale bien comitean
 @Transactional(readOnly = true)
-
 @Component
 public class PedidoDao {
 

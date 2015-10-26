@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ar.edu.uces.progweb2.springmvc.model.Avatar;
 
+
 @Transactional(readOnly = true)
 @Component
 public class AvatarDao {
