@@ -10,9 +10,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-${pedido.id}
-${pedido.cliente_id}
-${pedido.fecha}
-					<form:errors cssStyle="color: red" />
+
+<TABLE>
+<tr><td>${pedido.id}</td><td>${pedido.cliente_id}</td><td>${pedido.fecha}</td></tr>
+</TABLE>
+
 </body>
 </html>

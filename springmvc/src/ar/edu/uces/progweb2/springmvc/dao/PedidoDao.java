@@ -23,17 +23,10 @@ public class PedidoDao {
 		this.sessionFactory = sessionFactory;
 	}
 
-	public Pedido get(long id) throws Exception{
+	public Pedido get(long id) {
 		Session session = sessionFactory.getCurrentSession();
-		Pedido out = null;
-		try {
-			out= (Pedido) session.get(Pedido.class, id);//load no tira excepcion si no lo encuentra	
-		} catch (Exception e) {
-			// TODO: handle exception
-			throw new Exception("no se pudo traer el registro "+id+" | "+ e.getMessage() );
+		return (Pedido) session.get(Pedido.class, id);// no tira excepcion si no lo encuentra	
 		}
-		return out;
-	}
 
 	@Transactional(readOnly = false, propagation = Propagation.REQUIRED)
 	public void save(Pedido pedido) {
