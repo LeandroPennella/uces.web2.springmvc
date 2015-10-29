@@ -20,7 +20,7 @@ public class SomethingDao {
 
 	@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
-		this.sessionFactory = sessionFactory;
+ 		this.sessionFactory = sessionFactory;
 	}
 
 	public Something get(long id) {
