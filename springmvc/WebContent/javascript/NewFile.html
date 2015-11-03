@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var x=1;
+y=2*x+4;
+//algo(2,4)					//falla porque no esta declarada
+
+function algo(a,b){
+	var c=a+b; 				//local
+	//c=a+b; 				//global!!!
+	return c;
+}
+algo(2.3)					//funca
+algo()						//pasa los parametros como undefined
+
+function cambiarColor(){
+	//var c=document.getElementById("carlos");
+	var s=document.getElementById("carlos").style;
+	var b=document.getElementById("carlos").style.backgroundColor;
+	
+	if (b=="blue"){
+		s.backgroundColor="red";
+	} else {
+		s.backgroundColor="blue";
+	}
+		
+}
+
+function cambiarColorDiv(miDiv){
+	//var c=document.getElementById("carlos");
+	var s=miDiv.style;
+	var b=s.backgroundColor;
+	if (b=="blue"){
+		s.backgroundColor="green";
+	} else {
+		s.backgroundColor="blue";
+	}
+	
+}
+
+function iniciar(){
+	var b=document.getElementById("carlos").style.backgroundColor="black";
+}
+
+</script>
+</head>
+<body onload="iniciar();">
+<div style="background-color: red;" id="carlos" onclick="return cambiarColor();">
+lalala
+</div>
+
+<div style="background-color: red;" id="reycarlos" onclick="return cambiarColorDiv(this);">
+lalala
+</div>
+
+hola
+<script type="text/javascript">
+//alert("hola");
+//document.getElementById("carlos").style="background-color:blue;";
+//var c=document.getElementById("carlos");
+//c.style.backgroundColor="blue";
+//document.getElementById("carlos").style.backgroundColor="blue";
+
+</script>
+</body>
+</html>
