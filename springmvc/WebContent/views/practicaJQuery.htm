@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<style>
+.verde{background-color: green;}
+.azul{background-color: blue;}
+</style>
+<script type="text/javascript" src="../js/jquery-1.8.2.js"></script>
+<script type="text/javascript">
+function cambiarClase(div)
+{
+	div.toggleClass("azul");
+}
+
+$(function(){
+	//$("div").addClass("verde");
+	$("div").addClass("verde");
+	$("div").bind("click", cambiarClase(this));
+	})
+</script>
+</head>
+<body>
+<div>sarasa</div>
+</body>
+</html>
