@@ -32,6 +32,8 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/><!-- declaro la url que va a interceptar // este toma todo // ** toma recursivamente -->
+			<!-- <mvc:mapping path="/sevices/*"/> 	//intecepta solo lo que este en el primer nivel de services -->
+			<!-- <mvc:mapping path="/sevices/**"/> 	//intecepta todo lo que este dentro, recursivamente -->
 			<bean class="ar.edu.uces.progweb2.springmvc.controller.interceptor.miInterceptor"></bean><!-- la clase que implementa el interceptor -->
 		</mvc:interceptor>
 	</mvc:interceptors>
