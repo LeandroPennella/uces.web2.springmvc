@@ -50,10 +50,9 @@ public class JsonController {
 	}
 
 	@RequestMapping(value = "/createSomethingAjax", method = RequestMethod.POST)
-	public @ResponseBody Map<String, Something> createSomething(
-			@RequestBody Something something) {
-		System.out.println("Creatin something with value "
-				+ something.getValue());
+	//responsebody y requestbody indica que voy a devolver y recibir json, respectivamente
+	public @ResponseBody Map<String, Something> createSomething(@RequestBody Something something) {
+		System.out.println("Creatin something with value " + something.getValue());
 		somethingDao.save(something);
 		Map<String, Something> out = new HashMap<String, Something>();
 		out.put("something", something);
