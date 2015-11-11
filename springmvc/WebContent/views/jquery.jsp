@@ -9,6 +9,13 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 		<title>Test de JQuery</title>
+		<style>
+		table, td, th{
+		border-collapse: collapse;
+		border:solid 1px gray;
+		}
+		th{ background-color: lightgray;}
+		</style>
 		<script type="text/javascript" src='<c:url value="/js/jquery-1.8.2.js" />'></script>
 		<script type="text/javascript">
 			//funcion de animar
@@ -70,6 +77,42 @@
 					}
 				);
 				
+				$("#ajaxTraerTodo").click(
+						function() {
+							
+							$.ajax({
+								url : '<c:url value="/services/getAllSomethings" />',
+								type : "GET",
+								dataType : "json",
+								contentType : "application/json;charset=UTF-8",
+								beforeSend : function() {
+									$("#respuestaAjaxAll").html("Receiving...");
+								},
+								success : function(result, status, xhr){
+									//result = jQuery.parseJSON(result);
+									var aux="<table>";
+									aux+="<tr><th>id</th><th>valor</th><tr>";
+									
+									for (var item in result) {
+										aux+="<tr><td>";
+										aux+=result[item].id;
+										aux+="</td><td>";
+										aux+=result[item].value;
+										aux+="</td></tr>";
+									}
+									aux+="</table>"
+									$("#respuestaAjaxAll").html(aux);
+								},
+								error : function(jqXHR, textStatus, errorThrown) {
+									var errorHtml = "An error ocurred <br/>";
+									errorHtml += "Status: " + textStatus + "<br/>";
+									errorHtml += "Reason: <pre>" + errorThrown + "</pre> <br/>";
+									$("#respuestaAjaxAll").html(errorHtml);
+								}
+							});
+						}
+					);
+				
 				$("#ajaxPostButton").click(
 						function() {
 							var value = $("#somethingValue").val();
@@ -81,10 +124,10 @@
 								data:  JSON.stringify(something),
 								dataType : "json",
 								contentType : "application/json;charset=UTF-8",
-								beforeSend : function() {
+								beforeSend : function() {							//callback
 									$("#respuestaPostAjax").html("Sending create...");
 								},
-								success : function(result, status, xhr){
+								success : function(result, status, xhr){ 			//callback
 									aux = "Creado el something con id <u>";
 									aux +=  result.something.id;
 									aux +=  "</u> y valor <u>";
@@ -92,7 +135,7 @@
 									aux +=  "</u>";
 									$("#respuestaPostAjax").html(aux);
 								},
-								error : function(jqXHR, textStatus, errorThrown) {
+								error : function(jqXHR, textStatus, errorThrown) {	//callback
 									var errorHtml = "An error ocurred <br/>";
 									errorHtml += "Status: " + textStatus + "<br/>";
 									errorHtml += "Reason: <pre>" + errorThrown + "</pre> <br/>";
@@ -118,6 +161,10 @@
 		<input type="text" id="somethingId" value="3" /><br/>
 		<input type="button" id="ajaxButton" value="Find Something" /><br/>
 		<div id="respuestaAjax">Sin respuesta</div>
+		<br/>
+		<br/>
+		<input type="button" id="ajaxTraerTodo" value="Get All Something" /><br/>
+		<div id="respuestaAjaxAll">Sin respuesta</div>
 		<br/>
 		<br/>
 		<h2>Post de creación por AJAX</h2>

@@ -1,5 +1,7 @@
 package ar.edu.uces.progweb2.springmvc.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.edu.uces.progweb2.springmvc.model.Pedido;
 import ar.edu.uces.progweb2.springmvc.model.Something;
 
 //todos los metodos son transaccionales
@@ -47,6 +50,15 @@ public class SomethingDao {
 		// } finally {
 		// session.close();
 		// }
+	}
+	
+	@Transactional(readOnly=true)
+	public List<Something> getAll()
+	{
+		Session session = sessionFactory.getCurrentSession();
+		List<Something>somethings=session.createQuery("from " +Something.class.getName()).list();
+		return somethings;
+		
 	}
 
 }

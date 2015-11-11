@@ -1,6 +1,7 @@
 package ar.edu.uces.progweb2.springmvc.controller.persistence;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,4 +60,11 @@ public class JsonController {
 		return out;
 
 	}
+	
+	@RequestMapping(value="/getAllSomethings", method=RequestMethod.GET)
+	public @ResponseBody List<Something> getAllSomethings(){
+		List<Something>somethings=somethingDao.getAll();
+		return 		somethings;
+	}
+	
 }
