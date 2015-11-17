@@ -121,7 +121,7 @@
 							$.ajax({
 								url : '<c:url value="/services/createSomethingAjax" />',
 								type : "POST",
-								data:  JSON.stringify(something),
+								data:  JSON.stringify(something),					//data se usa solo cuando pasamos un objeto
 								dataType : "json",
 								contentType : "application/json;charset=UTF-8",
 								beforeSend : function() {							//callback

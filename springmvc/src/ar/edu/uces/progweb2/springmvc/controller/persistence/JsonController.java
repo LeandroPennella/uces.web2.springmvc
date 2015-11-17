@@ -1,5 +1,6 @@
 package ar.edu.uces.progweb2.springmvc.controller.persistence;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,7 +33,17 @@ public class JsonController {
 		out.put("something", somethingDao.get(id));
 		return out;
 	}
-
+	
+	@RequestMapping(value = "/getByValue")
+	public @ResponseBody List<String> getByValue(@RequestParam("value") String value) {
+	//	System.out.println("Get Something with id " + id);
+		//Map<String, Something> out = new HashMap<String, Something>();
+		List<String>somethingsValues=new ArrayList<String>();
+		for(Something something : somethingDao.getByValue(value))
+		{somethingsValues.add(something.getValue());}
+		return somethingsValues;
+	}
+	
 	@RequestMapping(value = "/find")
 	public @ResponseBody Map<String, Something> find(@RequestParam("id") long id) {
 		System.out.println("Find Something with id " + id);
