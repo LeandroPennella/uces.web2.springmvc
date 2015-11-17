@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script type="text/javascript" src='<c:url value="/js/jquery-1.8.2.js" />'></script>
   <script type="text/javascript" src='<c:url value="/js/jquery-ui-1.11.4/jquery-ui.min.js" />'></script>
-  
-  
   <style>
   
   #city { width: 25em; }
